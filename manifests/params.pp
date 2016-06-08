@@ -70,9 +70,9 @@ class dell::params {
         'PowerEdge R620'    => 'OMSA_7.2',
         default             => 'latest',
       }
-		$dell::params::key = '1285491434D8786F' 
-		$dell::params::key_source = "http://linux.dell.com/repo/community/debian/dists/${::lsbdistcodename}/Release.gpg"
-		$dell::params::key_server = 'pool.sks-keyservers.net'
+      $dell::params::key = '1285491434D8786F' 
+      $dell::params::key_source = "http://linux.dell.com/repo/community/debian/dists/${::lsbdistcodename}/Release.gpg"
+      $dell::params::key_server = 'pool.sks-keyservers.net'
     } # Debian
 
     default:  { fail("Unsupported OS family: ${::osfamily}") }

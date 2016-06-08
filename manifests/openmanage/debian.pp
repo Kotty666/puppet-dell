@@ -49,21 +49,21 @@ class dell::openmanage::debian inherits dell::params {
       }
     }
     default: {
-				apt::source { 'dell_omsa':
-					comment  => 'Dell OpenManage Ubuntu & Debian Repositories',
-					location => 'http://linux.dell.com/repo/community/debian',
-					release  => $::lsbdistcodename,
-					repos    => 'openmanage',
-					key      => {
-					'id'     => $dell::params::key,
-					'source' => $dell::params::key_source,
-					'server' => $dell::params::key_server,
-					},
-					include => {
-						'src'  => false,
-						'deb'  => true,
-					},
-				}
+        apt::source { 'dell_omsa':
+          comment  => 'Dell OpenManage Ubuntu & Debian Repositories',
+          location => 'http://linux.dell.com/repo/community/debian',
+          release  => $::lsbdistcodename,
+          repos    => 'openmanage',
+          key      => {
+            'id'     => $dell::params::key,
+            'source' => $dell::params::key_source,
+            'server' => $dell::params::key_server,
+          },
+          include => {
+            'src'  => false,
+            'deb'  => true,
+          },
+        }
       }
     }
 
